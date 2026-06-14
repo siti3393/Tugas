@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | SITTA</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body class="login-body">
+    <div class="login-container">
+      <img src="img/logo-ut.png" alt="Logo SITTA" class="logo-sitta-login" />
+      <h2>Login | SITTA-UT</h2>
+
+      <p>Sistem Informasi Tiras & Transaksi Bahan Ajar</p>
+
+      <div class="form-container">
+        <form id="loginForm">
+          <input type="email" required placeholder="Email" id="email" />
+          <input
+            type="password"
+            required
+            placeholder="Password"
+            id="password"
+          />
+          <button type="submit">Login</button>
+        </form>
+      </div>
+
+      <div class="login-options">
+        <p
+          onclick="
+            const btnModalCancel = document.getElementById('modalCancel');
+            btnModalCancel.style.display = 'none';
+            const btnModalOk = document.getElementById('modalOk');
+            btnModalOk.textContent = 'Ok';
+
+            showModal({
+              title: 'Peringatan',
+              description: 'Maaf fitur belum tersedia',
+              onOk: () => {},
+            });
+          "
+        >
+          Belum punya akun?
+        </p>
+        <p
+          onclick="
+            const btnModalCancel = document.getElementById('modalCancel');
+            btnModalCancel.style.display = 'none';
+            const btnModalOk = document.getElementById('modalOk');
+            btnModalOk.textContent = 'Ok';
+
+            showModal({
+              title: 'Peringatan',
+              description: 'Maaf Fitur belum tersedia',
+              onOk: () => {},
+            });
+          "
+        >
+          Lupa Password
+        </p>
+      </div>
+    </div>
+
+    <div id="customModal" class="modal-overlay">
+      <div class="modal-box">
+        <h2 id="modalTitle">Title</h2>
+        <p id="modalDesc">Deskripsi</p>
+
+        <div class="modal-actions">
+          <button id="modalCancel" class="btn-cancel" style="display: none">
+            Cancel
+          </button>
+          <button id="modalOk" class="btn-ok">Lanjutkan</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
