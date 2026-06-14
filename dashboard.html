@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | SITTA</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="dashboard-body">
+    <nav class="navbar">
+      <a href="">
+        <div class="nav-left">
+          <img src="img/logo_ut.png" class="nav-logo" />
+          <span class="nav-title">SITTA</span>
+        </div>
+      </a>
+
+      <div class="nav-menu">
+        <a href="stok.html"><i class="fas fa-book"></i> Bahan Ajar</a>
+        <a href="tracking.html"><i class="fas fa-truck"></i> Tracking</a>
+        <a href="#"><i class="fas fa-history"></i> Histori</a>
+
+        <div class="dropdown">
+          <a href="#"><i class="fas fa-chart-line"></i>Laporan</a>
+
+          <div class="dropdown-menu">
+            <a
+              hrep="#"
+              onclick="
+                const btnModalCancel = document.getElementById('modalCancel');
+                btnModalCancel.style.display = 'none';
+
+                showModal({
+                  title: 'Laporan',
+                  description: 'Mohon maaf fitur laporan belum tersedia',
+                  onOk: () => {},
+                });
+              "
+              >Monitoring progres DO Bahan ajar</a
+            >
+            <a
+              hrep="#"
+              onclick="
+                const btnModalCancel = document.getElementById('modalCancel');
+                btnModalCancel.style.display = 'none';
+
+                showModal({
+                  title: 'Laporan',
+                  description: 'Mohon maaf fitur laporan belum tersedia',
+                  onOk: () => {},
+                });
+              "
+              >Rekap bahan ajar</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <button
+          id="logoutBtn"
+          class="btn-logout"
+          onclick="
+            showModal({
+              title: 'Logout',
+              description: 'Yakin ingin keluar?',
+              onOk: () => {
+                sessionStorage.removeItem('loggedUser');
+                window.location.href = 'index.html';
+              },
+            })
+          "
+        >
+          logout
+        </button>
+      </div>
+    </nav>
+
+    <div class="dashboard-container">
+      <header class="dashboard-header">
+        <div class="header-left">
+          <h1 id="greeting">Selamat datang!</h1>
+        </div>
+      </header>
+
+      <main>
+        <h2>Menu Utama</h2>
+
+        <div class="menu-grid">
+          <div class="menu-card" onclick="navigateTo('stok.html')">
+            <i class="fas fa-book"></i> <br />
+            <span>Informasi Bahan Ajar</span>
+          </div>
+
+          <div class="menu-card" onclick="navigateTo('tracking.html')">
+            <i class="fas fa-truck"></i> <br />
+            <span>Tracking Pengiriman</span>
+          </div>
+
+          <div
+            class="menu-card"
+            onclick="
+              const btnModalCancel = document.getElementById('modalCancel');
+              btnModalCancel.style.display = 'none';
+
+              showModal({
+                title: 'Laporan',
+                description: 'Mohon maaf fitur laporan belum tersedia',
+                onOk: () => {},
+              });
+            "
+          >
+            <i class="fas fa-chart-line"></i> <br />
+            <span>Laporan</span>
+          </div>
+
+          <div
+            class="menu-card"
+            onclick="
+              const btnModalCancel = document.getElementById('modalCancel');
+              btnModalCancel.style.display = 'none';
+
+              showModal({
+                title: 'Histori Transaksi',
+                description: 'Mohon maaf fitur histori belum tersedia',
+                onOk: () => {},
+              });
+            "
+          >
+            <i class="fa-clock-rotate-left fas"></i> <br />
+            <span>Histori Transaksi</span>
+          </div>
+        </div>
+
+        <!-- MODAL -->
+        <div id="customModal" class="modal-overlay">
+          <div class="modal-box">
+            <h2 id="modalTitle">Title</h2>
+            <p id="modalDesc">Deskripsi</p>
+
+            <div class="modal-actions">
+              <button id="modalCancel" class="btn-cancel">Cancel</button>
+              <button id="modalOk" class="btn-ok">OK</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
