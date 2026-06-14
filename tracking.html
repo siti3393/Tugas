@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta name="author" content="Bagus Uswanto" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tracking Pengiriman | SITTA</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body class="tracking-body">
+    <div class="tracking-container">
+      <h1><i class="fas fa-truck"></i> Tracking Pengiriman</h1>
+
+      <div class="tracking-form">
+        <input
+          type="text"
+          id="inputDO"
+          placeholder="Masukkan Nomor Delivery Order (DO)"
+        />
+        <button onclick="cariDO()">Cari</button>
+      </div>
+
+      <div id="trackingResult" class="tracking-result">Contoh : 2023001234</div>
+
+      <button
+        class="back-btn"
+        onclick="window.location.href = 'dashboard.html'"
+      >
+        <i class="fa-arrow-left fas"></i> Kembali ke Dashboard
+      </button>
+
+    </div>
+    <div id="customModal" class="modal-overlay">
+      <div class="modal-box">
+        <h2 id="modalTitle">Title</h2>
+        <p id="modalDesc">Deskripsi</p>
+
+        <div class="modal-actions">
+          <button id="modalCancel" class="btn-cancel" style="display: none">
+            Cancel
+          </button>
+          <button id="modalOk" class="btn-ok">Ok</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
